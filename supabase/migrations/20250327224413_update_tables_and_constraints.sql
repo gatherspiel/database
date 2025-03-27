@@ -15,3 +15,8 @@ CREATE TABLE if not exists event_group_map (
     event_id integer REFERENCES events,
     CONSTRAINT unique_event_group_map UNIQUE(group_id, event_id)
 );
+
+
+ALTER table "event_group_map" enable row level security;
+ALTER table "game_stores" enable row level security;
+ALTER table "location_group_map" enable row level security;
