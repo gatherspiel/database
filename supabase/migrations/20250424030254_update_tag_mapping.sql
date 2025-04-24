@@ -2,7 +2,7 @@ DROP TABLE event_tag_map CASCADE;
 
 CREATE TABLE if not exists location_tag (
      id SERIAL PRIMARY KEY,
-     name varchar NOT NULL,
+     name varchar NOT NULL
 );
 
 
