@@ -7,6 +7,6 @@ CREATE TABLE if not exists location_tag (
 
 
 CREATE TABLE if not exists location_tag_mapping (
-    location_tag_id varchar REFERENCES location_tag,
-    location_id varchar REFERENCES locations
+    location_tag_id integer REFERENCES location_tag,
+    location_id integer REFERENCES locations
 );
