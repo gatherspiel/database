@@ -1,0 +1,3 @@
+
+
+INSERT into events
