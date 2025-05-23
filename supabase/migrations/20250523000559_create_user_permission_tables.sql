@@ -1,14 +1,29 @@
 
-CREATE TYPE user_role_level AS ENUM ('site_admin','user','tester');
+DO $$ BEGIN
+   CREATE TYPE user_role_level AS ENUM ('site_admin','user','tester');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
 
-CREATE table if not exists user_permission_level
+DO $$ BEGIN
+   CREATE TYPE group_admin_level as ENUM('group_admin','group_moderator');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+
+DO $$ BEGIN
+   CREATE TYPE event_admin_level as ENUM('event_moderator');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
 
 CREATE TABLE if not exists user_role_data (
     userId varchar PRIMARY KEY,
     user_role_level user_role_level
 );
 
-CREATE TYPE group_admin_level as ENUM('group_admin','group_moderator')
 
 CREATE TABLE if not exists group_admin_data (
     userId varchar,
@@ -17,10 +32,8 @@ CREATE TABLE if not exists group_admin_data (
     PRIMARY KEY(userId, groupId)
 );
 
-CREATE TYPE event_admin_level as ENUM('event_moderator')
 
-
-CREATE TABLE if not exists event_admin_level (
+CREATE TABLE if not exists event_admin_data (
     userId varchar,
     eventId integer,
     event_admin_level event_admin_level,
