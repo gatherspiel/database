@@ -1,0 +1,1 @@
+ALTER TABLE groups ADD column is_hidden boolean DEFAULT false;
