@@ -1,0 +1,1 @@
+ALTER TABLE groups ADD column image_path varchar;
