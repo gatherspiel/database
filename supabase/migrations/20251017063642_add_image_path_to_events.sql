@@ -1,0 +1,1 @@
+ALTER TABLE events ADD column image_path varchar;
