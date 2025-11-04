@@ -1,7 +1,7 @@
 DROP table if exists event_rsvp;
 
 DO $$ BEGIN
-   ALTER TYPE event_admin_level ADD VALUE  'event_moderator';
+   ALTER TYPE event_admin_level ADD VALUE  'event_rsvp';
 EXCEPTION
     WHEN duplicate_object THEN null;
 END $$;
