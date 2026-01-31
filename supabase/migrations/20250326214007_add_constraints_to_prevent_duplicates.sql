@@ -6,5 +6,4 @@ ALTER table groups
 ADD location_id integer REFERENCES locations;
 
 
-ALTER table groups ADD CONSTRAINT unique_groups UNIQUE(name, location_id);
 ALTER table locations ADD CONSTRAINT unique_locations UNIQUE(city, state, street_address);
