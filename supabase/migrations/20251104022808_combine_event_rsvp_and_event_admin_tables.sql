@@ -6,6 +6,6 @@ EXCEPTION
     WHEN duplicate_object THEN null;
 END $$;
 
-ALTER table event_admin_data ADD column rsvp_time timestamp;
+ALTER table event_admin_data ADD column IF NOT EXISTS rsvp_time timestamp;
 
 ALTER table event_admin_data ADD constraint event_admin_data_event_id_fkey foreign KEY (event_id) references events (id)
